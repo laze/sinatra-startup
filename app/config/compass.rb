@@ -1,17 +1,23 @@
+require "bootstrap-sass"
+
 if defined?(Sinatra)
-  # This is the configuration to use when running within sinatra
-  project_path = Sinatra::Application.root
-  environment = :development
+  environment     = :development
+
+  project_path  = Sinatra::Application.root
+
+  css_dir       = File.join(Sinatra::Application.public_dir, "stylesheets")
+  images_dir    = File.join(Sinatra::Application.public_dir, "images")
 else
-  # this is the configuration to use when running within the compass command line tool.
-  css_dir = File.join 'static', 'stylesheets'
+  environment     = :production
+
   relative_assets = true
-  environment = :production
+
+  css_dir       = File.join("public", "stylesheets")
+  images_dir    = File.join("public", "images")
 end
 
 # This is common configuration
-sass_dir                = File.join(Sinatra::Application.root, "views", "sass")
-images_dir              = File.join(Sinatra::Application.public_dir, "images")
+sass_dir                = File.join("views", "sass")
 http_path               = "/"
 http_images_path        = "/images"
 http_stylesheets_path   = "/stylesheets"
