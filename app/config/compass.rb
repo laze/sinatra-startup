@@ -1,0 +1,1 @@
+https://github.com/chriseppstein/compass-sinatra/blob/master/config/compass.config
