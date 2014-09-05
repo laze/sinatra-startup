@@ -4,19 +4,20 @@ if defined?(Sinatra)
   environment     = :development
 
   project_path  = Sinatra::Application.root
-
-  css_dir       = File.join(Sinatra::Application.public_dir, "stylesheets")
-  images_dir    = File.join(Sinatra::Application.public_dir, "images")
 else
   environment     = :production
 
-  relative_assets = true
+  project_path  = File.dirname(__FILE__)
 
-  css_dir       = File.join("public", "stylesheets")
-  images_dir    = File.join("public", "images")
+  relative_assets = true
 end
 
-# This is common configuration
+#** Set up directories.
+#* @see http://compass-style.org/help/documentation/sass-based-configuration-options/
+#**
+  css_dir       = File.join("public", "stylesheets")
+  images_dir    = File.join("public", "images")
+  fonts_dir     = File.join("public", "fonts")
 sass_dir                = File.join("views", "sass")
 http_path               = "/"
 http_images_path        = "/images"
