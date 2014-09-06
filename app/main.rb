@@ -10,10 +10,10 @@ require 'erb'
  #** Set up Sinatra variables
 set :app_file,      __FILE__
 set :root,          File.dirname(__FILE__)
-set :views,         'views'
-set :public_dir,    'public'
-set :layouts_dir,   File.join('views', 'layouts')
-set :partials_dir,  File.join('views', 'partials')
+set :views,         File.join(File.dirname(__FILE__), 'views')
+set :public_dir,    File.join(File.dirname(__FILE__), 'public')
+set :layouts_dir,   File.join(File.dirname(__FILE__), 'views', 'layouts')
+set :partials_dir,  File.join(File.dirname(__FILE__), 'views', 'partials')
 
 
 configure do
