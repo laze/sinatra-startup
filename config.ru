@@ -1,4 +1,4 @@
-require './app/main.rb'
+require './main.rb'
 
 #erb :layout_options => {:views => settings.layouts_dir}
 
