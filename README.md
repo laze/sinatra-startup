@@ -1,12 +1,11 @@
-Sinatra Start
-=================
+# Sinatra Startup
 
 Start your Sinatra project easily like singin' a song. This is a Sinatra based skeleton to start your project easily.
 
-#  What's included
+##  What's included
 I tried to work only with official components adn doing less things as I could be locally with the project.
 
-## Structure
+### Structure
 Since the Sass port has a separate repo and serves a slightly different audience, the contents of the project differ greatly from the main Bootstrap project. This ensures the Sass port is as compatible with as many Sass-based systems as possible.
  
  Path | Description
@@ -18,14 +17,14 @@ Since the Sass port has a separate repo and serves a slightly different audience
  views/ | a
  views/layouts/ | a
 
-## Components
+### Components
  * [Sinatra](https://github.com/sinatra/sinatra)
  * [Sinatra contrib](https://github.com/sinatra/sinatra-contrib)
  * [Compass](http://compass-style.org/)
  * [Sass](http://sass-lang.com/)
  * [Bootstrap Sass](http://getbootstrap.com/css/#sass)
  
-# Getting Started
+## Getting Started
 
 Fetch repository.
 
@@ -33,7 +32,7 @@ Fetch repository.
 
 bootstrap-sass precompiled
 
-# Usage
+## Usage
 Modify sass
 
 ```run compass compile```
