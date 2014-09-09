@@ -15,8 +15,10 @@ set :public_dir,    File.join(File.dirname(__FILE__), 'public')
 set :layouts_dir,   File.join(File.dirname(__FILE__), 'views', 'layouts')
 set :partials_dir,  File.join(File.dirname(__FILE__), 'views', 'partials')
 
-
 configure do
+  disable :show_exceptions
+  disable :raise_errors
+
   # Mongoid.load!("./mongoid.yml")
   # Set your Google Analytics ID here if you have one:
   # set :google_analytics_id, 'UA-12345678-1'
@@ -28,13 +30,11 @@ configure do
 end
 
 helpers do
-  def show_404
-    status 404
-    @page_name = '404'
-    @page_title = '404'
-    erb :'404', :layout => :default,
-                :layout_options => {:views => settings.layouts_dir}
-  end
+### CLEANUP!
+###
+### https://github.com/daz4126/sinatra-head-cleaner/tree/master/sinatra
+###
+  require  './helpers/error.rb'
 end
 
 
@@ -42,9 +42,13 @@ not_found do
   show_404
 end
 
+error do
+  show_500
+end
+
 get '/' do
     @page_title = 'Hello World!'
-
+f
     erb :index, :layout => :default,
                 :layout_options => {:views => settings.layouts_dir}
 end
