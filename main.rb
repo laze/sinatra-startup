@@ -27,10 +27,24 @@ configure do
     Compass.add_project_configuration(File.join(Sinatra::Application.root, 'config', 'compass.rb'))
 end
 
+helpers do
+  def show_404
+    status 404
+    @page_name = '404'
+    @page_title = '404'
+    erb :'404', :layout => :default,
+                :layout_options => {:views => settings.layouts_dir}
+  end
+end
+
+
+not_found do
+  show_404
+end
+
 get '/' do
     @page_title = 'Hello World!'
 
-    erb :index,
-	   :layout => :default,
-       :layout_options => {:views => settings.layouts_dir}
+    erb :index, :layout => :default,
+                :layout_options => {:views => settings.layouts_dir}
 end
