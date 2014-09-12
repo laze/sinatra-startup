@@ -1,6 +1,6 @@
 <div class="container" style="margin-top: 15px;">
     <div class="alert alert-danger" role="alert">
-        <h1><span class="glyphicon glyphicon-warning-sign"></span> <%=h exception.class %></strong> at <strong><%=h path %></h1>
+        <h1><span class="glyphicon glyphicon-warning-sign"></span> <%= env['sinatra.error'].name %></h1>
         <p>
         <%= env['sinatra.error'].message %>
         </p>
